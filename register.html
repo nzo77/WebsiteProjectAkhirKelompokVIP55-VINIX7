@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="styleloginregister.css">
+</head>
+<body>
+    <div class="main-container register-container">
+        <!-- Header -->
+        <div class="login-header register-header">
+            <h1>REGISTER - MBKM VINIX7</h1>
+            <p>Buat akun baru untuk mengakses dashboard</p>
+        </div>
+        
+        <!-- Body -->
+        <div class="login-body">
+            <form class="login-form">
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-input" placeholder="Masukkan email anda">
+                </div>
+                
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" class="form-input" placeholder="Buat Password">
+                </div>
+                
+                <!-- Konfirmasi Password -->
+                <div class="form-group">
+                    <label for="confirm-password">Konfirmasi Password</label>
+                    <input type="password" id="confirm-password" class="form-input" placeholder="Konfirmasi password">
+                </div>
+                
+                <!-- Tombol Register -->
+                <button type="submit" class="login-btn register-btn" >Register</button>
+                
+                <!-- Login Section -->
+                <div class="register-section">
+                    <p>Sudah punya akun? <a href="login.html" class="register-link">Login di sini</a></p>
+                </div>
+                
+                <!-- Tombol Kembali -->
+                <button type="button" class="back-btn" onclick="window.location.href='index.html'"> 
+                    ← Kembali ke dashboard
+                </button>
+            </form>
+        </div>
+        
+        <!-- Footer -->
+        <div class="login-footer">
+            <p>&copy; 2024 Dashboard App. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

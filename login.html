@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - MBKM Vinix7</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+        }
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-section img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+        }
+
+        .logo-section h1 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+
+        .logo-section p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e1e1;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-login:hover {
+            background: #2980b9;
+        }
+
+        .additional-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .additional-links a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .additional-links a:hover {
+            text-decoration: underline;
+        }
+
+        .demo-accounts {
+            margin-top: 25px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .demo-accounts h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .demo-account {
+            background: white;
+            padding: 10px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #e1e1e1;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .demo-account:hover {
+            background: #e3f2fd;
+        }
+
+        .demo-account .email {
+            font-weight: 600;
+            color: #333;
+        }
+
+        .demo-account .password {
+            color: #666;
+            font-size: 0.8rem;
+        }
+
+        .back-to-home {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-to-home a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .back-to-home a:hover {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="logo-section">
+            <img src="logo-removebg-preview.png" alt="MBKM Vinix7">
+            <h1>MBKM VINIX7</h1>
+            <p>Silakan login ke akun Anda</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Masukkan email Anda">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Masukkan password Anda">
+            </div>
+
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+
+        <div class="additional-links">
+            <a href="forgot-password.html" class="forgot-password">Lupa Password?</a>
+        </div>
+
+        <!-- Demo Accounts untuk Testing -->
+        <div class="demo-accounts">
+            <h4>Akun Demo (Klik untuk login):</h4>
+            
+            <div class="demo-account" data-email="admin@vinix7.com" data-password="admin123">
+                <div class="email">admin@vinix7.com</div>
+                <div class="password">Password: admin123</div>
+                <div class="role">Role: Administrator</div>
+            </div>
+            
+            <div class="demo-account" data-email="mahasiswa@example.com" data-password="mahasiswa123">
+                <div class="email">mahasiswa@example.com</div>
+                <div class="password">Password: mahasiswa123</div>
+                <div class="role">Role: Mahasiswa</div>
+            </div>
+            
+            <div class="demo-account" data-email="dosen@example.com" data-password="dosen123">
+                <div class="email">dosen@example.com</div>
+                <div class="password">Password: dosen123</div>
+                <div class="role">Role: Dosen</div>
+            </div>
+        </div>
+
+        <div class="back-to-home">
+            <a href="index.html">← Kembali ke Beranda</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginForm = document.getElementById('loginForm');
+            const demoAccounts = document.querySelectorAll('.demo-account');
+
+            // Handle form login
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                // Validasi sederhana
+                if (!email || !password) {
+                    alert('Harap isi semua field!');
+                    return;
+                }
+                
+                // Simulasi proses login
+                const userData = {
+                    username: email.split('@')[0],
+                    email: email,
+                    avatar: `https://ui-avatars.com/api/?name=${encodeURIComponent(email.split('@')[0])}&background=3498db&color=fff&size=128`,
+                    role: getRoleFromEmail(email)
+                };
+                
+                // Simpan data user ke localStorage
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('userData', JSON.stringify(userData));
+                
+                // Redirect ke halaman utama
+                alert('Login berhasil!');
+                window.location.href = 'index.html';
+            });
+
+            // Handle demo accounts
+            demoAccounts.forEach(account => {
+                account.addEventListener('click', function() {
+                    const email = this.getAttribute('data-email');
+                    const password = this.getAttribute('data-password');
+                    
+                    // Auto-fill form
+                    document.getElementById('email').value = email;
+                    document.getElementById('password').value = password;
+                    
+                    // Optional: Auto-submit
+                    // loginForm.dispatchEvent(new Event('submit'));
+                });
+            });
+
+            // Fungsi untuk menentukan role berdasarkan email
+            function getRoleFromEmail(email) {
+                if (email.includes('admin')) return 'Administrator';
+                if (email.includes('dosen')) return 'Dosen';
+                if (email.includes('mahasiswa')) return 'Mahasiswa';
+                return 'User';
+            }
+
+            // Cek jika user sudah login
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html>

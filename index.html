@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBKM Vinix7</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo">
+                 <img src="logo-removebg-preview.png" alt="Logo MBKM Vinix7" class="logo-img">
+                   <div class="logo-text">
+                <h2>MBKM VINIX7</h2>
+                 <button class="close-sidebar" id="closeSidebar">×</button>
+                </div>
+            </div>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="dashboard">Dashboard</a></li>
+                    <li class="dropdown">
+                        <a href="pendaftaran.html" class="nav-link" data-page="pendaftaran">Pendaftaran</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="nav-link" data-page="pendaftaran-mbkm">Pendaftaran MBKM</a></li>
+                            <li><a href="upgrade-paket.html" class="nav-link" data-page="upgrade-paket">Upgrade Paket MBKM</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" class="nav-link" data-page="masterdata">MasterData</a></li>
+                    <li><a href="#" class="nav-link" data-page="laporan">Laporan</a></li>
+                    <li><a href="#" class="nav-link" data-page="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <header class="header">
+                <button class="toggle-sidebar" id="toggleSidebar">☰</button>
+                <h1 id="pageTitle">Dashboard</h1>
+                 <!-- Ganti bagian ini di header -->
+<div class="auth-buttons">
+    <!-- Tampilan sebelum login -->
+    <div class="auth-buttons-logged-out">
+        <a href="login.html" class="btn btn-login">Login</a>
+        <a href="register.html" class="btn btn-register">Register</a>
+    </div>
+    
+    <!-- Tampilan setelah login -->
+    <div class="auth-buttons-logged-in" style="display: none;">
+        <div class="user-profile">
+            <div class="user-avatar">
+                <img src="https://ui-avatars.com/api/?name=User&background=3498db&color=fff&size=128" alt="Avatar" id="userAvatar">
+            </div>
+            <div class="user-info">
+                <span class="username" id="usernameDisplay">User</span>
+                <div class="user-dropdown">
+                    <a href="#" class="dropdown-item" data-page="profile">Profile</a>
+                    <a href="#" class="dropdown-item" data-page="settings">Settings</a>
+                    <a href="#" class="dropdown-item logout-btn">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Profile Page -->
+<div class="page" id="profile">
+    <div class="profile-container">
+        <h2>Profile Saya</h2>
+        <div class="profile-card">
+            <div class="profile-header">
+                <div class="profile-avatar">
+                    <img src="admin.png" alt="Profile Avatar" id="profileAvatar">
+                    <button class="change-avatar-btn">Ubah Foto</button>
+                </div>
+                <div class="profile-info">
+                    <h3 id="profileName">John Doe</h3>
+                    <p id="profileEmail">john.doe@example.com</p>
+                    <p class="profile-role">Mahasiswa</p>
+                </div>
+            </div>
+            <div class="profile-details">
+                <div class="detail-item">
+                    <label>Universitas</label>
+                    <span>Universitas Gadjah Mada</span>
+                </div>
+                <div class="detail-item">
+                    <label>Program Studi</label>
+                    <span>Teknik Informatika</span>
+                </div>
+                <div class="detail-item">
+                    <label>Semester</label>
+                    <span>5</span>
+                </div>
+                <div class="detail-item">
+                    <label>Status MBKM</label>
+                    <span class="status-badge active">Aktif</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Settings Page -->
+<div class="page" id="settings">
+    <div class="settings-container">
+        <h2>Pengaturan</h2>
+        <div class="settings-card">
+            <h3>Pengaturan Akun</h3>
+            <form class="settings-form">
+                <div class="form-group">
+                    <label for="notifications">Notifikasi Email</label>
+                    <input type="checkbox" id="notifications" checked>
+                </div>
+                <div class="form-group">
+                    <label for="language">Bahasa</label>
+                    <select id="language">
+                        <option value="id">Bahasa Indonesia</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="theme">Tema</label>
+                    <select id="theme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-primary">Simpan Pengaturan</button>
+            </form>
+        </div>
+    </div>
+</div>
+</div>
+            </header>
+
+
+            
+            <div class="content" id="content">
+                <!-- Dashboard Content -->
+                <div class="page active" id="dashboard">
+                    <div class="card-container">
+                        <div class="card">
+                            <h3>Program MBKM Aktif</h3>
+                            <p class="number">5</p>
+                            <p class="description">Program yang sedang berjalan</p>
+                        </div>
+                        <div class="card">
+                            <h3>Mahasiswa Terdaftar</h3>
+                            <p class="number">127</p>
+                            <p class="description">Total peserta MBKM Vinix7</p>
+                        </div>
+                        <div class="card">
+                            <h3>Pendaftaran Baru</h3>
+                            <p class="number">23</p>
+                            <p class="description">Pendaftar minggu ini</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-section">
+                        <h2>Informasi Terbaru</h2>
+                        <div class="info-item">
+                            <h3>Pendaftaran MBKM Batch 3 Dibuka</h3>
+                            <p>Pendaftaran program MBKM Vinix7 batch 3 telah dibuka. Segera daftarkan diri Anda sebelum tanggal 30 November 2023.</p>
+                            <span class="date">15 November 2023</span>
+                        </div>
+                        <div class="info-item">
+                            <h3>Workshop Persiaapan MBKM</h3>
+                            <p>Workshop persiapan mengikuti program MBKM akan dilaksanakan pada tanggal 25 November 2023. Daftar segera!</p>
+                            <span class="date">10 November 2023</span>
+                        </div>
+                        <div class="info-item">
+                            <h3>Pengumuman Seleksi Batch 2</h3>
+                            <p>Hasil seleksi peserta MBKM Vinix7 batch 2 telah diumumkan. Silakan cek di dashboard masing-masing.</p>
+                            <span class="date">5 November 2023</span>
+                        </div>
+                    </div>
+
+                
+                    <!-- Footer Section -->
+<footer class="dashboard-footer">
+    <div class="footer-content">
+        <div class="footer-section">
+             <img src="logo.jpg" alt="Universitas Logo" class="footer-logo">
+            <h3 class="footer-title">MBKM VINIX7</h3>
+            <h5 class="footer-subtitle-small">TENTANG VINIX7</h5>
+            
+            <div class="faculty-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>DIVISI MAGANG</th>
+                            <th>AKADEMIK</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Pengolahan data</td>
+                            <td>Program pengolahan data ini mencakup pelatihan Artificial Intelligence (AI), Data Science, dan Data Analysis secara terstruktur dan aplikatif.</td>
+                        </tr>
+                        <tr>
+                            <td>TikTok Micro-Influencer Career</td>
+                            <td>Program TikTok Micro-Influencer ini dirancang untuk membantu mahasiswa memanfaatkan platform TikTok sebagai alat pemasaran dan personal branding yang efektif.</td>
+                        </tr>
+                        <tr>
+                            <td>Cybersecurity dan Digital Forensic</td>
+                            <td>Keamanan Siber (termasuk compliance untuk Undang-Undang Perlindungan Data Pribadi dengan cybersecurity awareness untuk karyawan non-IT dan juga Security Operation System, Penetration Testing, ISO 27001, IT Audit) dan Digital Forensik.</td>
+                        </tr>
+                        <tr>
+                            <td>Innovation</td>
+                            <td>Blockchain development is the process of developing and maintaining a blockchain platform. This involves creating the infrastructure that allows for the creation and management of blockchain-based applications and services, such as digital currencies, smart contracts, and distributed applications.</td>
+                        </tr>
+                        <tr>
+                            <td>Operations and Financing.</td>
+                            <td>Kami adalah operating partner yang membantu merencanakan recruitment talent, tax planning, perpajakan, pengelolaan keuangan, project, operational day-to-day dan juga financing untukpembiayaan perusahaan.</td>
+                        </tr>
+                        <tr>
+                            <td>Market Entry B2B.</td>
+                            <td>Kami adalah partner yang membantu perusahaan baru untuk membuka pasar baru dan bekerjasama dengan topik dan klien kami untuk membuka peluang business yang bermanfaat profitable dan sustainable (berkelanjutan).</td>
+                        </tr>
+                        <tr>
+                            <td>Website Building</td>
+                            <td>Enterprise Resource Plannning (ERP), E-commerce, Learning Management System, Digital Forensic Tools, Mobile Development (Android dan IoS).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="campus-info">
+                <p><strong>Kampus Merdeka</strong></p>
+            </div>
+        </div>
+        
+        <div class="footer-section">
+            <h4 class="footer-subtitle">ALAMAT</h4>
+            <p class="address">
+                Sleman, Yogyakarta, Indonesia
+            </p>
+        </div>
+        
+        <div class="footer-section">
+            <h4 class="footer-subtitle">INFORMASI KONTAK</h4>
+            <div class="contact-info">
+                <p><strong>T:</strong> 0877-5977-9655</p>
+                <p><strong>F:</strong> +62 52 6777777</p>
+                <p><strong>E:</strong> vinix7.idn@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer-bottom">
+        <p>Copyright © 2025 MAGANG MANDIRI MBKM VINIX7</p>
+    </div>
+</footer>
+</div>
+
+                <!-- Pendaftaran MBKM Content -->
+                <div class="page" id="pendaftaran-mbkm">
+                    <div class="form-container">
+                        <h2>Formulir Pendaftaran MBKM Vinix7</h2>
+                        <form id="pendaftaranForm">
+                            <div class="form-group">
+                                <label for="nama">Nama Lengkap</label>
+                                <input type="text" id="nama" name="nama" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="universitas">Universitas</label>
+                                <input type="text" id="universitas" name="universitas" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="prodi">Program Studi</label>
+                                <input type="text" id="prodi" name="prodi" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="semester">Semester</label>
+                                <select id="semester" name="semester" required>
+                                    <option value="">Pilih Semester</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="no_hp">No. HP</label>
+                                <input type="text" id="no_hp" name="no_hp" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="jenis_mbkm">Jenis Program MBKM</label>
+                                <select id="jenis_mbkm" name="jenis_mbkm" required>
+                                    <option value="">Pilih Program</option>
+                                    <option value="Beginner">Magang Beginner ( Rp350.000 )</option>
+                                    <option value="Start Pack">Magang Starter Pack ( Rp650.000 )</option>
+                                    <option value="Essential">Magang Essential ( Rp850.000 )</option>
+                                    <option value="VIP">Magang VIP ( Rp1.200.000 )</option>
+                                    <option value="Prestige Pro Access">Magang Prestige Pro Access ( Rp1.500.000 )</option>
+                                    <option value="Super Elite Pro Access">Magang Super Elite Pro Access ( Rp 2.500.000 )</option>
+                                    <option value="Ultra Pro Access">Magang Ultra Pro Access ( Rp 3.200.000 )</option>
+                                    <option value="Live Class">LIVE CLASS - English for Business Professional ( Rp350.000/bln or Rp1.400.000/4bln )</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+    <label for="bukti_pembayaran">Bukti Pembayaran <span class="required">*</span></label>
+    <div class="upload-container">
+        <input type="file" id="bukti_pembayaran" name="bukti_pembayaran" accept=".pdf" required class="file-input">
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📌</div>
+            <div class="upload-text">
+                <span class="upload-title">Tambahkan file</span>
+                <span class="upload-info">Upload file PDF. Maks 10 MB.</span>
+            </div>
+            <button type="button" class="upload-btn">Pilih File</button>
+        </div>
+        <div class="file-info" id="fileInfo">
+            <div class="file-details">
+                <span class="file-name" id="fileName">Belum ada file dipilih</span>
+                <span class="file-size" id="fileSize">-</span>
+            </div>
+            <button type="button" class="delete-btn" id="deleteBtn" title="Hapus file">🗑️</button>
+        </div>
+    </div>
+    <div class="form-hint">
+        <strong>Upload 1 file yang didukung: PDF only. Maks 10 MB.</strong>
+    </div>
+</div>
+
+
+
+                            <div class="form-group">
+                                <label for="topik">Apakah Anda Sudah Memiliki Topik atau Proposal Skripsi?</label>
+                                <input type="text" id="topik" name="topik" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="dosen_pembimbing">Dosen Pembimbing</label>
+                                <input type="text" id="dosen_pembimbing" name="dosen_pembimbing" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="alasan">Alasan Mengikuti MBKM</label>
+                                <textarea id="alasan" name="alasan" rows="4" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn-primary">Daftar</button>
+                                <button type="reset" class="btn-secondary">Reset</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Upgrade Paket MBKM Content -->
+                <div class="page" id="upgrade-paket">
+                    <div class="form-container">
+                        <h2>Upgrade Paket MBKM</h2>
+                        <p>Formulir untuk mengupgrade paket MBKM yang sedang diikuti.</p>
+                        <form id="upgradeForm">
+                            <div class="form-group">
+                                <label for="id_pendaftaran">ID Pendaftaran</label>
+                                <input type="text" id="id_pendaftaran" name="id_pendaftaran" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="paket_sebelumnya">Paket Sebelumnya</label>
+                                <select id="paket_sebelumnya" name="paket_sebelumnya" required>
+                                    <option value="">Pilih Paket Sebelumnya</option>
+                                    <option value="Beginner">Magang Beginner ( Rp350.000 )</option>
+                                    <option value="Start Pack">Magang Starter Pack ( Rp650.000 )</option>
+                                    <option value="Essential">Magang Essential ( Rp850.000 )</option>
+                                    <option value="VIP">Magang VIP ( Rp1.200.000 )</option>
+                                    <option value="Prestige Pro Access">Magang Prestige Pro Access ( Rp1.500.000 )</option>
+                                    <option value="Super Elite Pro Access">Magang Super Elite Pro Access ( Rp 2.500.000 )</option>
+                                    <option value="Ultra Pro Access">Magang Ultra Pro Access ( Rp 3.200.000 )</option>
+                                    <option value="Live Class">LIVE CLASS - English for Business Professional ( Rp350.000/bln or Rp1.400.000/4bln )</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="paket_baru">Paket Baru</label>
+                                <select id="paket_baru" name="paket_baru" required>
+                                    <option value="">Pilih Paket Baru</option>
+                                    <option value="Beginner">Magang Beginner ( Rp350.000 )</option>
+                                    <option value="Start Pack">Magang Starter Pack ( Rp650.000 )</option>
+                                    <option value="Essential">Magang Essential ( Rp850.000 )</option>
+                                    <option value="VIP">Magang VIP ( Rp1.200.000 )</option>
+                                    <option value="Prestige Pro Access">Magang Prestige Pro Access ( Rp1.500.000 )</option>
+                                    <option value="Super Elite Pro Access">Magang Super Elite Pro Access ( Rp 2.500.000 )</option>
+                                    <option value="Ultra Pro Access">Magang Ultra Pro Access ( Rp 3.200.000 )</option>
+                                    <option value="Live Class">LIVE CLASS - English for Business Professional ( Rp350.000/bln or Rp1.400.000/4bln )</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+    <label for="tambah_pembayaran">Bukti Pembayaran - Kekurangan Pembayaran Upgrade Paket <span class="required">*</span></label>
+    <div class="upload-container">
+        <input type="file" id="tambah_pembayaran" name="tambah_pembayaran" accept=".pdf" required class="file-input">
+        <div class="upload-area" id="uploadArea2">
+            <div class="upload-icon">📌</div>
+            <div class="upload-text">
+                <span class="upload-title">Tambahkan file</span>
+                <span class="upload-info">Upload file PDF. Maks 10 MB.</span>
+            </div>
+            <button type="button" class="upload-btn">Pilih File</button>
+        </div>
+        <div class="file-info" id="fileInfo2">
+            <div class="file-details">
+                <span class="file-name" id="fileName2">Belum ada file dipilih</span>
+                <span class="file-size" id="fileSize2">-</span>
+            </div>
+            <button type="button" class="delete-btn" id="deleteBtn2" title="Hapus file">🗑️</button>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label for="alasan_upgrade">Alasan Upgrade Paket</label>
+    <textarea id="alasan_upgrade" name="alasan_upgrade" rows="4" required></textarea>
+</div>
+                            <div class="form-group">
+                                <button type="submit" class="btn-primary">Ajukan Upgrade</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- MasterData Content -->
+                <div class="page" id="masterdata">
+                    <h2>Master Data</h2>
+                    <div class="data-section">
+                        <h3>Data Mahasiswa</h3>
+                        <div class="table-container">
+                            <table id="mahasiswaTable">
+                                <thead>
+                                    <tr>
+                                        <th>Universitas</th>
+                                        <th>Nama</th>
+                                        <th>Program Studi</th>
+                                        <th>Semester</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="mahasiswaTableBody">
+                                    <!-- Data akan diisi oleh JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Laporan Content -->
+                <div class="page" id="laporan">
+                    <h2>Laporan MBKM</h2>
+                    <div class="card-container">
+                        <div class="card">
+                            <h3>Laporan Keikutsertaan</h3>
+                            <p>Lihat laporan keikutsertaan mahasiswa dalam program MBKM</p>
+                            <button class="btn-primary" id="generateLaporan">Generate Laporan</button>
+                        </div>
+                        <div class="card">
+                            <h3>Laporan Progress</h3>
+                            <p>Pantau progress mahasiswa dalam program MBKM</p>
+                            <button class="btn-primary" id="lihatProgress">Lihat Progress</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Logout Content -->
+                <div class="page" id="logout">
+                    <div class="logout-container">
+                        <div class="card">
+                        <h2>Konfirmasi Logout</h2>
+                        <p>Apakah Anda yakin ingin keluar dari sistem?</p>
+                        <div class="button-group">
+                            <button class="btn-primary" id="confirmLogout" onclick="window.location.href='login.html'">Ya, Logout</button>
+                            <button class="btn-secondary" id="cancelLogout">Batal</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+   <!-- WhatsApp CS VINIX7 Popup -->
+<div class="whatsapp-widget">
+  <!-- Floating Button -->
+  <div class="whatsapp-button" id="whatsappButton">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884" fill="currentColor"/>
+    </svg>
+  </div>
+
+  <!-- Popup -->
+  <div class="whatsapp-popup" id="whatsappPopup">
+    <div class="popup-header">
+      <div class="popup-title">
+        <h4>CS VINIX7</h4>
+        <span class="status online">Online</span>
+      </div>
+      <button class="close-popup" id="closePopup">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M15 5L5 15M5 5L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+    
+    <div class="popup-content">
+      <div class="cs-info">
+        <div class="cs-avatar">
+          <img src="customerservice.png" alt="CS VINIX7">
+        </div>
+        <div class="cs-details">
+          <h5>Customer Service VINIX7</h5>
+          <p>JANGAN BANYAK TANYA GUA MAGERRRRRRRR INI DEMI DUIT AJA MAKANYA GUA KERJA</p>
+        </div>
+      </div>
+      
+      <div class="whatsapp-options">
+        <a href="https://wa.me/6287777777775?text=Halo%20CS%20VINIX7,%20saya%20butuh%20bantuan" 
+           class="whatsapp-link" target="_blank">
+          <div class="option-item">
+            <div class="option-icon">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="option-text">
+              <strong>Chat via WhatsApp</strong>
+              <span>Respon cepat 24 jam</span>
+            </div>
+          </div>
+        </a>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20 10.999H22C22 5.869 18.127 2 12.99 2V4C17.052 4 20 6.943 20 10.999Z" fill="currentColor"/>
+              <path d="M13 8C15.103 8 16 8.897 16 11H18C18 7.774 16.225 6 13 6V8Z" fill="currentColor"/>
+              <path d="M15.999 11C15.999 11.001 15.999 11.001 15.999 11.002C15.999 12.658 15.992 13.683 15.954 14.275C15.915 14.882 15.841 15.142 15.707 15.352C15.573 15.562 15.383 15.722 15.172 15.836C14.922 15.97 14.612 16.034 13.975 16.066C13.363 16.097 12.287 16.097 10.555 16.097C8.823 16.097 7.747 16.097 7.135 16.066C6.498 16.034 6.188 15.97 5.938 15.836C5.727 15.722 5.537 15.562 5.403 15.352C5.269 15.142 5.195 14.882 5.156 14.275C5.118 13.683 5.111 12.658 5.111 11.002C5.111 9.346 5.118 8.321 5.156 7.729C5.195 7.122 5.269 6.862 5.403 6.652C5.537 6.442 5.727 6.282 5.938 6.168C6.188 6.034 6.498 5.97 7.135 5.938C7.747 5.907 8.823 5.907 10.555 5.907C12.287 5.907 13.363 5.907 13.975 5.938C14.612 5.97 14.922 6.034 15.172 6.168C15.383 6.282 15.573 6.442 15.707 6.652C15.841 6.862 15.915 7.122 15.954 7.729C15.968 8.018 15.977 8.396 15.984 8.859H13.999C13.999 8.578 13.998 8.319 13.993 8.091C13.963 7.595 13.903 7.49 13.845 7.439C13.787 7.388 13.682 7.335 13.186 7.307C12.656 7.277 11.706 7.275 10.555 7.275C9.404 7.275 8.454 7.277 7.924 7.307C7.428 7.335 7.323 7.388 7.265 7.439C7.207 7.49 7.147 7.595 7.117 8.091C7.082 8.656 7.076 9.397 7.076 11.002C7.076 12.607 7.082 13.348 7.117 13.913C7.147 14.409 7.207 14.514 7.265 14.565C7.323 14.616 7.428 14.669 7.924 14.697C8.454 14.727 9.404 14.729 10.555 14.729C11.706 14.729 12.656 14.727 13.186 14.697C13.682 14.669 13.787 14.616 13.845 14.565C13.903 14.514 13.963 14.409 13.993 13.913C13.998 13.685 13.999 13.426 13.999 13.145H15.984C15.977 13.608 15.968 13.986 15.954 14.275Z" fill="currentColor"/>
+            </svg>
+            <span>0877-7777-7777</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
